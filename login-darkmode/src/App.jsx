@@ -73,13 +73,19 @@ export default function App() {
                 : 'Crie sua conta'}
             </h1>
 
-            <button
-              type="button"
-              className="btn-toggle"
-              onClick={() => setDarkMode(!darkMode)}
-            >
-              {darkMode ? '☀️' : '🌙'}
-            </button>
+            <label className="switch">
+              <input
+                type="checkbox"
+                checked={darkMode}
+                onChange={() => setDarkMode(!darkMode)}
+              />
+
+              <span className="slider">
+                <span className="switch-icon">
+                  {darkMode ? "☀️" : "🌙"}
+                </span>
+              </span>
+            </label>
           </div>
 
           {/* SUBTITULO */}

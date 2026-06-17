@@ -193,33 +193,76 @@ main {
 }
 
 /* ════════════════════════════════════════
-   BOTÃO TOGGLE
+   SWITCH DE TEMA
 ════════════════════════════════════════ */
 
-.btn-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.switch {
+  display: inline-block;
+  width: 72px;
+  height: 40px;
+}
 
-  width: 42px;
-  height: 42px;
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
 
   border-radius: 999px;
 
   border: 1px solid var(--border);
 
-  background: var(--bg-2);
+  background: #d1d5db;
 
   cursor: pointer;
 
   transition:
-    background 0.2s,
-    border-color 0.2s;
+    background 0.3s ease,
+    border-color 0.3s ease;
 }
 
-.btn-toggle:hover {
-  background: var(--accent-bg);
+.slider:hover {
   border-color: var(--border-focus);
+}
+
+/* Fundo do switch no modo escuro */
+.switch input:checked + .slider {
+  background: #7c3aed;
+}
+
+/* Bolinha */
+.switch-icon{
+  position: absolute;
+
+  top: 4px;
+  left: 4px;
+
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: white;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.2);
+
+  transition: transform 0.3s ease;
+}
+
+/* Movimento da bolinha */
+.switch input:checked + .slider .switch-icon {
+  transform: translateX(32px);
 }
 
 /* ════════════════════════════════════════
